@@ -1,104 +1,50 @@
-# ResearchFlow — Intelligent Research Paper Navigation & Discovery System
+ResearchFlow — An Intelligent Research Paper Navigation and Discovery System
 
-A final-year BE Information Technology project: a complete research workflow platform
-that helps students and researchers discover, analyze, compare, and organize academic papers.
+ResearchFlow is a web-based academic research platform designed to help users discover, analyze, compare, and organize research papers in one place.
 
-## Features
+🌐 Live Demo
 
-### Stage 1 — Working Foundation (Complete)
-- **Landing page** with hero, features, how-it-works, privacy section, and footer
-- **Authentication** — signup, login, logout, forgot password, session persistence, protected routes
-- **User profiles** with department and research interests
-- **Dashboard** with saved paper counts, reading progress, recent searches, quick actions, empty states
-- **Paper Discovery** — live search across OpenAlex with keyword-based relevance ranking
-- **Paper Details** — full metadata, authors, abstract, concepts, save/unsave, reading status
-- **My Workspace** — saved papers (with search/filter), notes (CRUD), reading lists (CRUD)
-- **Settings** — edit profile, department, research interests
-- **Responsive sidebar navigation** with collapse, mobile drawer, top search bar, profile menu
+Live Website: https://researchflow-j3etmekbi-shraddha-datadreamers-projects.vercel.app
 
-### Stage 2 — PDF Analysis & AI (Complete — Extractive Mode)
-- **PDF upload** to private Supabase Storage with file validation (type, size)
-- **Browser-side text extraction** using PDF.js with page number preservation
-- **Scanned PDF detection** — explains when OCR is required
-- **Passage chunking** with overlapping segments for retrieval
-- **Structured analysis** — extracts research problem, objectives, methodology, dataset, findings, limitations, future work
-- **Q&A chat** with keyword-based passage retrieval and evidence display (page references)
-- **Privacy consent** — clearly discloses no external AI processing; all extraction runs in-browser
-- Missing information is labelled "Not stated or not found in the extracted text"
+🎯 Project Objectives
 
-### Stage 3 — Research Tools (Complete)
-- **Paper Comparison** — select 2-4 saved papers, side-by-side table, CSV export, print, research gap suggestions
-- **Citation Explorer** — fetches real references and cited-by data from OpenAlex, filter tabs, source links
-- **Literature Review Matrix** — editable table with papers as rows, research fields as columns, personal notes, CSV export, print
-- **Research Journey Map** — timeline of saved papers by publication year with filters
+- Discover relevant research papers.
+- Analyze and understand research papers.
+- Explore citations and research connections.
+- Compare multiple research papers.
+- Organize saved papers in a personal workspace.
+- Support a more structured academic research workflow.
 
-### Stage 4 — Workspace & Alerts (Complete)
-- **Topic Alerts** — save research topics with keywords, manually check for new papers via OpenAlex, store check results
-- **Search history** persisted in database
-- **Recently viewed papers** tracking
-- **Department-aware discovery** — department and interests stored in profile, used for personalized recommendations
+✨ Key Modules
 
-### Planned / Not Yet Implemented
-- Semantic embedding-based ranking (requires AI provider key)
-- Crossref and arXiv API integration
-- Interactive citation graph (React Flow)
-- Scheduled background alert checks and email notifications
-- OCR for scanned PDFs
+- Paper Discovery: Search for research papers.
+- Paper Analysis: Review and understand paper content.
+- Citation Exploration: Explore citation relationships.
+- Paper Comparison: Compare multiple research papers.
+- Research Workspace: Organize and access saved research.
+- Research Matrix and Gap Analysis: Support structured review of research topics.
+- Research Journey and Alerts: Help organize research exploration and updates.
 
-## Technology Stack
+Feature availability depends on the current implementation.
 
-- **Frontend:** Next.js 13, React, TypeScript, Tailwind CSS, shadcn/ui, Lucide React
-- **Backend:** Supabase (PostgreSQL, Auth, Storage, Edge Functions)
-- **Research Data:** OpenAlex API (primary)
-- **PDF Processing:** pdfjs-dist (browser-side text extraction)
-- **AI:** Extractive analysis (keyword-based) — no external AI service required
+🛠️ Technology Stack
 
-## Getting Started
+- Next.js and React
+- TypeScript
+- Supabase
+- External academic research APIs, as configured in the project
 
-### Prerequisites
-- Node.js 18+
-- npm
+🚀 Access
 
-### Installation
+Visit the live website using the link above. Some features may require an account.
 
-```bash
-npm install
-```
+🎓 Academic Project
 
-### Environment Variables
+ResearchFlow is a final-year BE Information Technology project developed as an academic team project.
 
-Copy `.env.example` to `.env.local` and fill in your Supabase credentials:
+📌 Repository
 
-```bash
-cp .env.example .env.local
-```
-
-Required variables:
-- `NEXT_PUBLIC_SUPABASE_URL` — Your Supabase project URL
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY` — Your Supabase anon/public key
-- `SUPABASE_SERVICE_ROLE_KEY` — Your Supabase service role key (server only)
-
-### Running the Project
-
-```bash
-npm run dev        # Development server
-npm run build      # Production build
-npm run typecheck  # TypeScript type checking
-npm run lint       # ESLint
-```
-
-## Database Setup
-
-The database schema is managed through Supabase migrations:
-
-**Core tables:** profiles, papers, paper_authors, saved_papers, notes, reading_lists,
-reading_list_items, search_history, research_topics
-
-**Stage 2 tables:** uploaded_documents, paper_passages, analysis_runs, analysis_evidence,
-paper_references, recently_viewed, alert_settings, alert_checks, comparison_selections
-
-All user-owned tables have RLS policies enforcing `auth.uid() = user_id` ownership checks.
-A private Supabase Storage bucket (`documents`) stores uploaded PDFs with per-user access policies.
+This repository contains the source code and project files for ResearchFlow.
 
 ## Feature Status
 
@@ -152,6 +98,5 @@ supabase/
   config.toml      — Supabase configuration
 ```
 
-## Team
 
-Final-year BE Information Technology project (3 members).
+
